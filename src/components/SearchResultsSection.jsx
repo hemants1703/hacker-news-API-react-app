@@ -4,15 +4,7 @@ import { Link } from "react-router-dom";
 
 import SearchResult from "./SearchResult";
 
-import { useEffect, useState } from "react";
-
 const SearchResultsSection = ({ searchResults }) => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    if (searchResults.length > 0) setIsLoading(false);
-  }, [searchResults]);
-
   return (
     <Box className="search-results-section">
       <Heading as="h2" size="sm" fontWeight={"light"}>

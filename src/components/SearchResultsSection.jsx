@@ -4,17 +4,7 @@ import { Link } from "react-router-dom";
 
 import SearchResult from "./SearchResult";
 
-import { useEffect, useState } from "react";
-
 const SearchResultsSection = ({ searchResults }) => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    if (searchResults.length > 0) {
-      setIsLoading(false);
-    }
-  }, [searchResults]);
-
   return (
     <Box className="search-results-section">
       <Heading as="h2" size="sm" fontWeight={"light"}>
@@ -30,21 +20,17 @@ const SearchResultsSection = ({ searchResults }) => {
           display: searchResults.length === 0 ? "none" : "block",
         }}
       >
-        {isLoading ? (
-          <Skeleton height="100px" />
-        ) : (
-          searchResults.map((hits, index) => (
-            <Link to={`/post/${hits.objectID}`} key={index}>
-              <SearchResult
-                authorUsername={hits.author}
-                articleTitle={hits.title}
-                articleUrl={hits.url}
-                objectId={hits.objectID}
-              />
-              <Divider />
-            </Link>
-          ))
-        )}
+        {searchResults.map((hits, index) => (
+          <Link to={`/post/${hits.objectID}`} key={index}>
+            <SearchResult
+              authorUsername={hits.author}
+              articleTitle={hits.title}
+              articleUrl={hits.url}
+              objectId={hits.objectID}
+            />
+            <Divider />
+          </Link>
+        ))}
       </Box>
     </Box>
   );

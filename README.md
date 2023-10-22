@@ -1,8 +1,25 @@
-# React + Vite
+# Hacker News API React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Building a Hacker News API React App with Vite, React, Chakra UI and various other web technologies.
 
-Currently, two official plugins are available:
+Check out the live demo [here](https://hacker-news-api-react-app.vercel.app/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- [x] Search for stories
+- [x] Quick search results as soon as you type
+- [x] Dedicated page to view searched posts in a beautiful UI
+- [x] View points
+- [x] VIew comments on posts 
+
+## Approach & Technologies used
+-   Vite to create a React app
+-   Chakra UI for styling
+-   Hacker News API to fetch data
+-   Axios to fetch data
+-   React Router to navigate between pages
+-   React Hooks to manage state
+-  Structured the project in a manner that it is easy to scale and maintain
+-  Separate dedicated section for tasks such as fetching data, styling, etc.
+-  DRY (Don't Repeat Yourself) approach to avoid repetition of code
+-  Modular approach to make the code more readable and maintainable
+  

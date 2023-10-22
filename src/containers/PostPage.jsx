@@ -18,14 +18,14 @@ const PostPage = () => {
   return (
     <>
       <Header />
-      <Bread objectId={objectId} />
+      <Bread />
       <Post objectId={objectId} />
       <Footer />
     </>
   );
 };
 
-const Bread = ({ objectId }) => {
+const Bread = () => {
   return (
     <Box p={"1rem"}>
       <Breadcrumb
@@ -37,7 +37,7 @@ const Bread = ({ objectId }) => {
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
-          <Link to={`post/${objectId}`}>Post</Link>
+          <Link to=".">Post</Link>
         </BreadcrumbItem>
       </Breadcrumb>
     </Box>

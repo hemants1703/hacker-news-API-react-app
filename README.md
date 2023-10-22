@@ -28,6 +28,6 @@ Check out the live demo [here](https://hacker-news-api-react-app.vercel.app/).
 -  Structured the project in a manner that it is easy to scale and maintain
 -  Separate dedicated section for tasks such as fetching data, styling, etc.
 -  DRY (Don't Repeat Yourself) approach to avoid repetition of code
--  Modular approach to make the code more readable and maintainable
+-  Implemented a modular architecture to make the code more readable and maintainable
 -  various other minor and minute details are taken care of to make the app more user friendly and easy to use as well as maintain and scale in the future
   

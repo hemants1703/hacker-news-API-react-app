@@ -3,15 +3,7 @@
 
 import { Card, CardBody, Flex, Link, Text } from "@chakra-ui/react";
 
-import theme from "../utils/theme";
-
-const SearchResult = ({
-  uid,
-  authorUsername,
-  articleTitle,
-  articleUrl,
-  objectId,
-}) => {
+const SearchResult = ({ authorUsername, articleTitle, articleUrl }) => {
   return (
     <Card>
       <CardBody>
@@ -40,7 +32,7 @@ const SearchResult = ({
               maxWidth: "100%", // Set the maxWidth to 100% of the parent element
             }}
           >
-            {uid + " " + authorUsername}
+            {authorUsername}
           </Text>
           <Text
             fontWeight={"bold"}
@@ -57,7 +49,7 @@ const SearchResult = ({
           >
             {articleTitle}
           </Text>
-          <Link
+          {/* <Link
             href={articleUrl}
             isExternal
             fontSize={"sm"}
@@ -72,9 +64,12 @@ const SearchResult = ({
               maxWidth: "100%", // Set the maxWidth to 100% of the parent element
               color: theme.colors.hackerLink,
             }}
-          >
+          > */}
+          {/* <a href={articleUrl} target="_blank" rel="noopener noreferrer">
             {articleUrl}
-          </Link>
+          </a> */}
+
+          {/* </Link> */}
         </Flex>
       </CardBody>
     </Card>

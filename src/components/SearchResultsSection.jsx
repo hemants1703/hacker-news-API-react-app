@@ -1,10 +1,20 @@
-import { Divider, Heading } from "@chakra-ui/react";
+import { Box, Divider, Heading, Skeleton } from "@chakra-ui/react";
+
+import { Link } from "react-router-dom";
 
 import SearchResult from "./SearchResult";
 
+import { useEffect, useState } from "react";
+
 const SearchResultsSection = ({ searchResults }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (searchResults.length > 0) setIsLoading(false);
+  }, [searchResults]);
+
   return (
-    <section className="search-results-section">
+    <Box className="search-results-section">
       <Heading as="h2" size="sm" fontWeight={"light"}>
         {searchResults.length === 0 ? (
           <>Type something in the search bar to receive results</>
@@ -12,27 +22,29 @@ const SearchResultsSection = ({ searchResults }) => {
           <>Search Results</>
         )}
       </Heading>
-      <section
+      <Box
         id="searchResults"
         style={{
           display: searchResults.length === 0 ? "none" : "block",
         }}
       >
-        {searchResults.map((hits, index) => (
-          <>
-            <SearchResult
-              key={index}
-              uid={index}
-              authorUsername={hits.author}
-              articleTitle={hits.title}
-              articleUrl={hits.url}
-              objectId={hits.objectID}
-            />
-            <Divider />
-          </>
-        ))}
-      </section>
-    </section>
+        {isLoading ? (
+          <Skeleton height={"500px"} width={"100%"} />
+        ) : (
+          searchResults.map((hits, index) => (
+            <Link to={`/post/${hits.objectID}`} key={index}>
+              <SearchResult
+                authorUsername={hits.author}
+                articleTitle={hits.title}
+                articleUrl={hits.url}
+                objectId={hits.objectID}
+              />
+              <Divider />
+            </Link>
+          ))
+        )}
+      </Box>
+    </Box>
   );
 };
 

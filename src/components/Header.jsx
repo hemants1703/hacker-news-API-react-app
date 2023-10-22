@@ -1,4 +1,5 @@
 import { Heading } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -12,7 +13,9 @@ const Header = () => {
       color={"hackerBlack"}
       fontWeight={"light"}
     >
-      Hacker News App
+      <Link to={"/"} style={{ textDecoration: "none", color: "inherit" }}>
+        Hacker News App
+      </Link>
     </Heading>
   );
 };

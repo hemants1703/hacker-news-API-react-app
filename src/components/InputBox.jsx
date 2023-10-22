@@ -34,7 +34,7 @@ const InputBox = ({ onSearchResults }) => {
       wrap="wrap"
       padding="1.5rem"
       color="white"
-      px={0}
+      px={"1rem"}
     >
       <Input
         id="searchBar"

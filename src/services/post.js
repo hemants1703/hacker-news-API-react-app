@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const fetchPost = async (objectId) => {
-    const postUrl = `http://hn.algolia.com/api/v1/items/${objectId}`;
+    const postUrl = `https://hn.algolia.com/api/v1/items/${objectId}`;
     try {
         const response = await axios.get(postUrl);
 

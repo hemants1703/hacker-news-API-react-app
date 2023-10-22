@@ -28,21 +28,17 @@ const SearchResultsSection = ({ searchResults }) => {
           display: searchResults.length === 0 ? "none" : "block",
         }}
       >
-        {isLoading ? (
-          <Skeleton height={"500px"} width={"100%"} />
-        ) : (
-          searchResults.map((hits, index) => (
-            <Link to={`/post/${hits.objectID}`} key={index}>
-              <SearchResult
-                authorUsername={hits.author}
-                articleTitle={hits.title}
-                articleUrl={hits.url}
-                objectId={hits.objectID}
-              />
-              <Divider />
-            </Link>
-          ))
-        )}
+        {searchResults.map((hits, index) => (
+          <Link to={`/post/${hits.objectID}`} key={index}>
+            <SearchResult
+              authorUsername={hits.author}
+              articleTitle={hits.title}
+              articleUrl={hits.url}
+              objectId={hits.objectID}
+            />
+            <Divider />
+          </Link>
+        ))}
       </Box>
     </Box>
   );

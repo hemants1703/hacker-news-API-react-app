@@ -28,7 +28,7 @@ const SearchResultsSection = ({ searchResults }) => {
           display: searchResults.length === 0 ? "none" : "block",
         }}
       >
-        {searchResults.length === 0 ? (
+        {isLoading ? (
           <Skeleton height={"500px"} width={"100%"} />
         ) : (
           searchResults.map((hits, index) => (

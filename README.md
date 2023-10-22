@@ -20,7 +20,7 @@ Check out the live demo [here](https://hacker-news-api-react-app.vercel.app/).
 
 ## Approach & Technologies used
 -   Vite to create a React app
--   Chakra UI for styling
+-   Chakra UI for styling beautiful UI/UX
 -   Hacker News API to fetch data
 -   Axios to fetch data
 -   React Router to navigate between pages

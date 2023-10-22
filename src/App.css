@@ -29,3 +29,13 @@
   min-width: 20%;
   max-height: 60vh;
 }
+
+.comment-text p {
+  margin: 0;
+  padding: 0;
+}
+
+.comment-text a {
+  color: #FF6926;
+  text-decoration: underline;
+}
